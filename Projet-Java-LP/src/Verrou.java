@@ -3,18 +3,18 @@ public class Verrou {
 	private boolean etat; // True = ouvert False = fermé
 	private boolean etatInitial;
 	
-	public Verrou(etatInitial)
+	public Verrou(boolean etatInitial)
 	{
 		this.etatInitial = etatInitial;
 		this.etat = etatInitial;
 	}
 	
-	public ouvrir()
+	public void ouvrir()
 	{
 		this.etat = true;
 	}
 	
-	public fermer()
+	public void fermer()
 	{
 		this.etat = false;
 	}
