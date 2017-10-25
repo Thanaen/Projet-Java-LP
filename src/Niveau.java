@@ -20,14 +20,14 @@ public class Niveau {
 	public Niveau(int numero){
 
 		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	
 		
 		try {
-			DocumentBuilder builder = factory.newDocumentBuilder();
+			
 			File listeNiveaux = new File("listeNiveau.xml");
-	        Document xml = (Document) builder.parse(listeNiveaux);
-
-		}
+			
+			niveau.getAttribute("bouton");
+	    }
 		catch (FileNotFoundException fnf) {
 			System.err.println("Pas de fichier disponible");
 		}
@@ -35,30 +35,6 @@ public class Niveau {
 			System.err.println("lecture impossible");
 			ioe.printStackTrace();
 		}
-		
-//		public static void main(String[] args) {
-//		      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//
-//		      try {
-//		         DocumentBuilder builder = factory.newDocumentBuilder();
-//		         File fileXML = new File("test.xml");
-//		         Document xml = builder.parse(fileXML);
-//		         
-//		         ArrayList<Element> list = new ArrayList<>();
-//		         Element root = xml.getDocumentElement();
-//		         getNodes(root, list);
-//		         
-//		         for(Element el : list){
-//		            System.out.println("Nom : " + el.getNodeName() + " - Valeur : " + el.getTextContent());
-//		         }         
-//		      } catch (ParserConfigurationException e) {
-//		         e.printStackTrace();
-//		      } catch (SAXException e) {
-//		         e.printStackTrace();
-//		      } catch (IOException e) {
-//		         e.printStackTrace();
-//		      }
-//		   }
 		
 	}
 	
