@@ -27,6 +27,7 @@ public class Niveau {
 			File listeNiveaux = new File("listeNiveau.xml");
 			
 			niveau.getAttribute("bouton");
+			
 	    }
 		catch (FileNotFoundException fnf) {
 			System.err.println("Pas de fichier disponible");
