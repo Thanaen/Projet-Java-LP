@@ -1,5 +1,6 @@
 
 public class Verrou {
+    // Attributs
     private boolean etat; // True = ouvert False = ferm�
     private boolean etatInitial;
 
@@ -16,3 +17,4 @@ public class Verrou {
         this.etat = false;
     }
 }
+
