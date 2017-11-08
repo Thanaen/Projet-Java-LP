@@ -1,13 +1,19 @@
 import java.util.Vector;
 
 public class Bouton {
-	//Attributs
+	// Attributs
 	private Vector<Verrou> listeVerrous;
-	private int numero;
 	
-	//Constructeur
+	// Constructeur
 	public Bouton(Vector<Verrou> listeVerrous, int numero){
 		this.listeVerrous = listeVerrous;
-		this.numero=numero;
+	}
+	
+	// Changer état verrous
+	public changerEtat(){
+		for(int i=0; i<listeVerrous.size(); i++)
+		{
+			(Verrou)listeVerrous.elementAt(i).changerEtat();
+		}
 	}
 }
