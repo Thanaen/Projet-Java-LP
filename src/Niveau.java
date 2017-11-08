@@ -3,91 +3,98 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Vector;
 
-import javax.swing.text.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class Niveau {
 
 	//ATTRIBUTS
+	
 	private int numero;					//le numéro du niveau
 	private int nbVerrou ;				//le nombre de vérrou et de boutton que le coffre a.
 	private Vector<Verrou> verrous;		//la liste des vérrous du niveau
 	private Vector<Bouton> boutons;		//la liste des boutons du niveau
+	final String NOMFICHIER = "listeNiveau.xml";
 	
 	//METHODES 
 	
 	public Niveau(int numero){
 
-		
-	
-		
-		try {
-			
-			File listeNiveaux = new File("listeNiveau.xml");
-			
-		//	niveau.getAttribute("bouton");
-		//	Element nom = (Element) personne.getElementsByTagName("nom").item(0);
-		//	nom.getTextContent()
-			
-//			 /*
-//	         * Etape 1 : récupération d'une instance de la classe "DocumentBuilderFactory"
-//	         */
-//	        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//	            	
-//	        try {
-//	            /*
-//	             * Etape 2 : création d'un parseur
-//	             */
-//	            final DocumentBuilder builder = factory.newDocumentBuilder();
-//				
-//		    /*
-//		     * Etape 3 : création d'un Document
-//		     */
-//		    final Document document= builder.parse(new File("repertoire.xml"));
-//				
-//		    //Affichage du prologue
-//		    System.out.println("*************PROLOGUE************");
-//		    System.out.println("version : " + document.getXmlVersion());
-//		    System.out.println("encodage : " + document.getXmlEncoding());		
-//	            System.out.println("standalone : " + document.getXmlStandalone());
-//						
-//		    /*
-//		     * Etape 4 : récupération de l'Element racine
-//		     */
-//		    final Element racine = document.getDocumentElement();
-//			
-//		    //Affichage de l'élément racine
-//		    System.out.println("\n*************RACINE************");
-//		    System.out.println(racine.getNodeName());
-//			
-//		    /*
-//		     * Etape 5 : récupération des personnes
-//		     */
-//		    final NodeList racineNoeuds = racine.getChildNodes();
-//		    final int nbRacineNoeuds = racineNoeuds.getLength();
-//				
-//		    for (int i = 0; i<nbRacineNoeuds; i++) {
-//		        if(racineNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE) {
-//		            final Element personne = (Element) racineNoeuds.item(i);
-//					
-//			    //Affichage d'une personne
-//			    System.out.println("\n*************PERSONNE************");
-//			    System.out.println("sexe : " + personne.getAttribute("sexe"));
-		
-	    }
-		catch (FileNotFoundException fnf) {
-			System.err.println("Pas de fichier disponible");
-		}
-		catch (IOException ioe) {
-			System.err.println("lecture impossible");
-			ioe.printStackTrace();
-		}
-		
+		this.numero = numero;
+		lireFichier(numero);
+
 	}
 	
-	public void lire(){
+	public void lireFichier(int numero){
 		
+        // Etape 1 : récupération d'une instance de la classe "DocumentBuilderFactory"
+       	
+		File listeNiveaux = new File(NOMFICHIER);
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            	
+        try {
+            
+            //Etape 2 : création d'un parseur
+            
+        	DocumentBuilder builder = factory.newDocumentBuilder();
+			
+		    // Etape 3 : création d'un Document
+		    
+		    Document document= (Document) builder.parse(listeNiveaux);
+		    
+		    // Etape 4 : récupération de l'Element racine
+		    
+		    Element racine = (document).getDocumentElement();
+
+		    // Etape 5 : récupération du niveau
+		    	
+		    	// dans le fichier racine = levels
+		    
+		    NodeList level = racine.getChildNodes();
+		    int nblevel = level.getLength();
+			
+		    Element niveauActuel = null;
+		    
+		    for (int i = 0; i<nblevel; i++) {
+		        if(level.item(i).getNodeType() == Node.ELEMENT_NODE) {
+		            niveauActuel = (Element) level.item(i);
+					if (Integer.parseInt(niveauActuel.getAttribute("id")) == numero){
+						break;
+					}else{
+						niveauActuel = null;
+					}
+		        }
+		    }
+		    
+		    //Etape 6 : récupération des verrous et boutons
+		    
+		    if(niveauActuel != null){
+		    	
+		    	NodeList verrous =  niveauActuel.getElementsByTagName("verrou");
+		    }
+		    
+        }
+		catch (FileNotFoundException e) {
+			System.err.println("Pas de fichier disponible");
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			System.err.println("lecture impossible");
+			e.printStackTrace();
+		} 
+        catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} 
+        catch (SAXException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
