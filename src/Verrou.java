@@ -12,8 +12,8 @@ public class Verrou {
 
     // Ferme le verrou s'il est ouvert, l'ouvre sinon
     public void changerEtat() {
-		if(this.etat = false){ouvrir()}
-		else{fermer()}
+		if(this.etat = false){ouvrir();}
+		else{fermer();}
 	}
     
     // Ouvre le verrou
