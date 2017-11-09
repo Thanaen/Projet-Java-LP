@@ -10,10 +10,10 @@ public class Bouton {
 	}
 	
 	// Changer état verrous
-	public changerEtat(){
+	public void changerEtat(){
 		for(int i=0; i<listeVerrous.size(); i++)
 		{
-			(Verrou)listeVerrous.elementAt(i).changerEtat();
+			listeVerrous.elementAt(i).changerEtat();
 		}
 	}
 }
