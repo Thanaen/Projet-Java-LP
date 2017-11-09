@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <levels>
-	<level id=1>
-		<verrou> ouvert </verrou>
-		<verrou> ouvert </verrou>
-		<verrou> fermé </verrou>
-		<bouton id=1>
-			<verrou> 1 </verrou>
-			<verrou> 3 </verrou>
-		</bouton>
-		<bouton id=2>
-			<verrou> 2 </verrou>
-		</bouton>
-		<bouton id=3>
-			<verrou> 2 </verrou>
-			<verrou> 3 </verrou>
-		</bouton>
+	<level id="1">
+	    <verrous>
+			<verrou>1</verrou>
+			<verrou>1</verrou>
+			<verrou>0</verrou>
+		</verrous>
+		<boutons>
+		    <bouton>
+				<verrou1>0</verrou1>
+				<verrou1>2</verrou1>
+			</bouton>
+			<bouton>
+				<verrou2>1</verrou2>
+			</bouton>
+			<bouton>
+				<verrou3>1</verrou3>
+				<verrou3>2</verrou3>
+			</bouton>
+		</boutons>
 	</level>
-	<level id=2>
-		<verrou> ouvert </verrou>
-		<verrou> fermé </verrou>
-		<verrou> fermé </verrou>
-		<bouton id=1>
-			<verrou> 1 </verrou>
-			<verrou> 2 </verrou>
-		</bouton>
-		<bouton id=2>
-			<verrou> 2 </verrou>
-		</bouton>
-		<bouton id=3>
-			<verrou> 1 </verrou>
-			<verrou> 3 </verrou>
-		</bouton>
+	<level id="2">
+	    <verrous>
+			<verrou>1</verrou>
+			<verrou>0</verrou>
+			<verrou>0</verrou>
+		</verrous>
+		<boutons>
+		    <bouton>
+				<verrou1>0</verrou1>
+			</bouton>
+			<bouton>
+				<verrou2>0</verrou2>
+				<verrou1>2</verrou1>
+			</bouton>
+			<bouton>
+				<verrou3>1</verrou3>
+				<verrou3>2</verrou3>
+			</bouton>
+		</boutons>
 	</level>
 </levels>

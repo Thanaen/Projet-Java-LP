@@ -18,16 +18,18 @@ public class Niveau {
 	//ATTRIBUTS
 	
 	private int numero;					//le numéro du niveau
-	private int nbVerrou ;				//le nombre de vérrou et de boutton que le coffre a.
 	private Vector<Verrou> verrous;		//la liste des vérrous du niveau
 	private Vector<Bouton> boutons;		//la liste des boutons du niveau
 	final String NOMFICHIER = "listeNiveau.xml";
+	
 	
 	//METHODES 
 	
 	public Niveau(int numero){
 
 		this.numero = numero;
+		verrous = new Vector<Verrou>();
+		boutons = new Vector<Bouton>();
 		lireFichier(numero);
 
 	}
@@ -60,7 +62,7 @@ public class Niveau {
 		    NodeList level = racine.getChildNodes();
 		    int nblevel = level.getLength();
 			
-		    Element niveauActuel = null;
+		    Element niveauActuel = null; //peut etre une nodelite
 		    
 		    for (int i = 0; i<nblevel; i++) {
 		        if(level.item(i).getNodeType() == Node.ELEMENT_NODE) {
@@ -78,11 +80,27 @@ public class Niveau {
 		    if(niveauActuel != null){
 		    	
 		    	NodeList verrous =  niveauActuel.getElementsByTagName("verrou");
-		    	int nbverrou = verrous.getLength();
+
+		     	int nbverrou = verrous.getLength();
 		    	for(int i = 0;i<nbverrou;i++){
 		    		if(verrous.item(i).getNodeType() == Node.ELEMENT_NODE){
-		    			//String etat = verrous.getContentText();
+		    			Element verrou = (Element) verrous.item(i);
+		    			Verrou unVerrou = new Verrou(Boolean.parseBoolean(verrou.getTextContent()));
+		    			this.verrous.add(unVerrou);
 		    		}
+		    	}
+		    	for (int ii = 0; ii<nbverrou; ii++){
+			    	NodeList boutonActuel =  niveauActuel.getElementsByTagName("verrou"+(ii+1));
+			    	Vector<Verrou> verrouDuBouton = new Vector<Verrou>();
+			    	int nbboutons = boutonActuel.getLength();
+			    	for(int i = 0;i<nbboutons;i++){
+			    		if(boutonActuel.item(i).getNodeType() == Node.ELEMENT_NODE){
+			    			Element verrou = (Element) boutonActuel.item(i);
+			    			verrouDuBouton.add(this.verrous.elementAt(Integer.parseInt(verrou.getTextContent())));
+			    		}
+			    	}
+			    	Bouton unBouton = new Bouton(verrouDuBouton);
+					this.boutons.add(unBouton);
 		    	}
 		    }
 		    
@@ -102,5 +120,27 @@ public class Niveau {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/* TEST DU CONSTRUCTEUR
+	public static void main(String[] args) {
+		
+		Niveau cestletest = new Niveau(1);
+		Vector<Verrou> lesVerrous = cestletest.verrous;
+		Vector<Bouton> lesBoutons = cestletest.boutons;
+		Verrou v1 = lesVerrous.elementAt(0);
+		Bouton b1 = lesBoutons.elementAt(0);
+		System.out.println(lesVerrous);
+		System.out.println(v1);
+		System.out.println(lesBoutons);
+		System.out.println(b1);
+		
+		System.out.println();
+		
+		Niveau test = new Niveau(1);
+		Vector<Verrou> lesVerrous2 = test.verrous;
+		Vector<Bouton> lesBoutons2 = test.boutons;
+		
+		System.out.println(lesVerrous2);
+		System.out.println(lesBoutons2);
+	}*/
 }
