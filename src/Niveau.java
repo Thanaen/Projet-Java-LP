@@ -66,8 +66,9 @@ public class Niveau {
 		    
 		    for (int i = 0; i<nblevel; i++) {
 		        if(level.item(i).getNodeType() == Node.ELEMENT_NODE) {
-		            niveauActuel = (Element) level.item(i);
-					if (Integer.parseInt(niveauActuel.getAttribute("id")) == numero){
+		            Element niveauTmp = (Element) level.item(i);
+					if (Integer.parseInt(niveauTmp.getAttribute("id")) == numero){
+						niveauActuel = (Element) level.item(i);
 						break;
 					}else{
 						niveauActuel = null;
@@ -119,6 +120,14 @@ public class Niveau {
         catch (SAXException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public Verrou getVerrou(int indice){
+		return verrous.elementAt(indice);
+	}
+	
+	public Bouton getBouton(int indice){
+		return boutons.elementAt(indice);
 	}
 
 	/* TEST DU CONSTRUCTEUR
