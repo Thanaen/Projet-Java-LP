@@ -5,7 +5,7 @@ public class Bouton {
 	private Vector<Verrou> listeVerrous;
 	
 	// Constructeur
-	public Bouton(Vector<Verrou> listeVerrous, int numero){
+	public Bouton(Vector<Verrou> listeVerrous){
 		this.listeVerrous = listeVerrous;
 	}
 	
