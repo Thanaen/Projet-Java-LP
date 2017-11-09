@@ -3,9 +3,9 @@
 <levels>
 	<level id="1">
 	    <verrous>
-			<verrou>1</verrou>
-			<verrou>1</verrou>
-			<verrou>0</verrou>
+			<verrou>true</verrou>
+			<verrou>true</verrou>
+			<verrou>false</verrou>
 		</verrous>
 		<boutons>
 		    <bouton>
@@ -23,9 +23,9 @@
 	</level>
 	<level id="2">
 	    <verrous>
-			<verrou>1</verrou>
-			<verrou>0</verrou>
-			<verrou>0</verrou>
+			<verrou>true</verrou>
+			<verrou>false</verrou>
+			<verrou>false</verrou>
 		</verrous>
 		<boutons>
 		    <bouton>
