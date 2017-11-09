@@ -78,6 +78,12 @@ public class Niveau {
 		    if(niveauActuel != null){
 		    	
 		    	NodeList verrous =  niveauActuel.getElementsByTagName("verrou");
+		    	int nbverrou = verrous.getLength();
+		    	for(int i = 0;i<nbverrou;i++){
+		    		if(verrous.item(i).getNodeType() == Node.ELEMENT_NODE){
+		    			//String etat = verrous.getContentText();
+		    		}
+		    	}
 		    }
 		    
         }
