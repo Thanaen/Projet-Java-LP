@@ -28,6 +28,8 @@ public class Niveau {
 	public Niveau(int numero){
 
 		this.numero = numero;
+		Vector<Verrou> verrous = null;
+		Vector<Bouton> boutons = null;
 		lireFichier(numero);
 
 	}
@@ -60,7 +62,7 @@ public class Niveau {
 		    NodeList level = racine.getChildNodes();
 		    int nblevel = level.getLength();
 			
-		    Element niveauActuel = null;
+		    Element niveauActuel = null; //peut etre une nodelite
 		    
 		    for (int i = 0; i<nblevel; i++) {
 		        if(level.item(i).getNodeType() == Node.ELEMENT_NODE) {
@@ -78,6 +80,30 @@ public class Niveau {
 		    if(niveauActuel != null){
 		    	
 		    	NodeList verrous =  niveauActuel.getElementsByTagName("verrou");
+		     	int nbverrou = verrous.getLength();
+		    	for(int i = 0;i<nbverrou;i++){
+		    		if(verrous.item(i).getNodeType() == Node.ELEMENT_NODE){
+		    			Element verrou = (Element) verrous.item(i);
+		    			Verrou unVerrou = new Verrou(Boolean.parseBoolean(verrou.getTextContent()));
+		    			this.verrous.add(unVerrou);
+		    		}
+		    	}
+		    	NodeList boutons =  niveauActuel.getElementsByTagName("bouton");
+		     	int nbboutons = boutons.getLength();
+		    	for(int i = 0;i<nbboutons;i++){
+		    		if(boutons.item(i).getNodeType() == Node.ELEMENT_NODE){
+		    			NodeList bouton = (NodeList) boutons.item(i);
+		    			int nbbouton = bouton.getLength();
+		    			Vector<Verrou> verrouDuBouton = null;
+				    	for(int j = 0;j<nbboutons;j++){
+				    		Element verrou = (Element) bouton.item(j);
+				    		
+				    		verrouDuBouton.add(this.verrous.elementAt(Integer.parseInt(verrou.getTextContent())));
+			    	  	}
+				    	Bouton unBouton = new Bouton(verrouDuBouton);
+				    	this.boutons.add(unBouton);
+		    		}
+		    	}
 		    }
 		    
         }
@@ -96,5 +122,10 @@ public class Niveau {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Niveau cestletest = new Niveau(1);
+		System.out.println(cestletest.numero);
+	}
 }
