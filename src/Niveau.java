@@ -136,7 +136,7 @@ public class Niveau {
 		
 		System.out.println();
 		
-		Niveau test = new Niveau(1);
+		Niveau test = new Niveau(0);
 		Vector<Verrou> lesVerrous2 = test.verrous;
 		Vector<Bouton> lesBoutons2 = test.boutons;
 		
