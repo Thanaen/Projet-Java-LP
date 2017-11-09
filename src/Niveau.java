@@ -18,18 +18,18 @@ public class Niveau {
 	//ATTRIBUTS
 	
 	private int numero;					//le numéro du niveau
-	private int nbVerrou ;				//le nombre de vérrou et de boutton que le coffre a.
 	private Vector<Verrou> verrous;		//la liste des vérrous du niveau
 	private Vector<Bouton> boutons;		//la liste des boutons du niveau
 	final String NOMFICHIER = "listeNiveau.xml";
+	
 	
 	//METHODES 
 	
 	public Niveau(int numero){
 
 		this.numero = numero;
-		Vector<Verrou> verrous = null;
-		Vector<Bouton> boutons = null;
+		verrous = new Vector<Verrou>();
+		boutons = new Vector<Bouton>();
 		lireFichier(numero);
 
 	}
@@ -88,21 +88,18 @@ public class Niveau {
 		    			this.verrous.add(unVerrou);
 		    		}
 		    	}
-		    	NodeList boutons =  niveauActuel.getElementsByTagName("bouton");
-		     	int nbboutons = boutons.getLength();
-		    	for(int i = 0;i<nbboutons;i++){
-		    		if(boutons.item(i).getNodeType() == Node.ELEMENT_NODE){
-		    			NodeList bouton = (NodeList) boutons.item(i);
-		    			int nbbouton = bouton.getLength();
-		    			Vector<Verrou> verrouDuBouton = null;
-				    	for(int j = 0;j<nbboutons;j++){
-				    		Element verrou = (Element) bouton.item(j);
-				    		
-				    		verrouDuBouton.add(this.verrous.elementAt(Integer.parseInt(verrou.getTextContent())));
-			    	  	}
-				    	Bouton unBouton = new Bouton(verrouDuBouton);
-				    	this.boutons.add(unBouton);
-		    		}
+		    	for (int ii = 0; ii<nbverrou; ii++){
+			    	NodeList boutonActuel =  niveauActuel.getElementsByTagName("verrou"+(ii+1));
+			    	Vector<Verrou> verrouDuBouton = new Vector<Verrou>();
+			    	int nbboutons = boutonActuel.getLength();
+			    	for(int i = 0;i<nbboutons;i++){
+			    		if(boutonActuel.item(i).getNodeType() == Node.ELEMENT_NODE){
+			    			Element verrou = (Element) boutonActuel.item(i);
+			    			verrouDuBouton.add(this.verrous.elementAt(Integer.parseInt(verrou.getTextContent())));
+			    		}
+			    	}
+			    	Bouton unBouton = new Bouton(verrouDuBouton);
+					this.boutons.add(unBouton);
 		    	}
 		    }
 		    
@@ -126,6 +123,22 @@ public class Niveau {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Niveau cestletest = new Niveau(1);
-		System.out.println(cestletest.numero);
+		Vector<Verrou> lesVerrous = cestletest.verrous;
+		Vector<Bouton> lesBoutons = cestletest.boutons;
+		Verrou v1 = lesVerrous.elementAt(0);
+		Bouton b1 = lesBoutons.elementAt(0);
+		System.out.println(lesVerrous);
+		System.out.println(v1);
+		System.out.println(lesBoutons);
+		System.out.println(b1);
+		
+		System.out.println();
+		
+		Niveau test = new Niveau(1);
+		Vector<Verrou> lesVerrous2 = test.verrous;
+		Vector<Bouton> lesBoutons2 = test.boutons;
+		
+		System.out.println(lesVerrous2);
+		System.out.println(lesBoutons2);
 	}
 }
