@@ -30,10 +30,10 @@
 		<boutons>
 		    <bouton>
 				<verrou1>0</verrou1>
+				<verrou1>2</verrou1>
 			</bouton>
 			<bouton>
 				<verrou2>0</verrou2>
-				<verrou1>2</verrou1>
 			</bouton>
 			<bouton>
 				<verrou3>1</verrou3>
