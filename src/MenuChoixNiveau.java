@@ -55,7 +55,7 @@ public class MenuChoixNiveau extends JFrame {
 	
 	private class actionNiveau3 implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			new fenetreTest2("Niveau 3",3);
+			new NiveauHard();
 			dispose();
 		}
 	}
