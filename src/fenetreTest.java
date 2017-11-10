@@ -143,29 +143,29 @@ public class fenetreTest extends JFrame{
 	{
 		if(verrou1.getEtat()==true)
 		{
-			imgVerrou1II = new ImageIcon("cadenas_ouvert.jpg");
+			imgVerrou1II = new ImageIcon("cadenas_ouvert2.png");
 		}
 		else
 		{
-			imgVerrou1II = new ImageIcon("cadenas_ferme.jpg");
+			imgVerrou1II = new ImageIcon("cadenas_ferme2.png");
 		}
 		
 		if(verrou2.getEtat()==true)
 		{
-			imgVerrou2II = new ImageIcon("cadenas_ouvert.jpg");
+			imgVerrou2II = new ImageIcon("cadenas_ouvert2.png");
 		}
 		else
 		{
-			imgVerrou2II = new ImageIcon("cadenas_ferme.jpg");
+			imgVerrou2II = new ImageIcon("cadenas_ferme2.png");
 		}
 		
 		if(verrou3.getEtat()==true)
 		{
-			imgVerrou3II = new ImageIcon("cadenas_ouvert.jpg");
+			imgVerrou3II = new ImageIcon("cadenas_ouvert2.png");
 		}
 		else
 		{
-			imgVerrou3II = new ImageIcon("cadenas_ferme.jpg");
+			imgVerrou3II = new ImageIcon("cadenas_ferme2.png");
 		}
 	}
 }
