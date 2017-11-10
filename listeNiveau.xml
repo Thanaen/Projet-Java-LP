@@ -42,9 +42,9 @@
 		</boutons>
 	</level>
 	
-	<level id="2">
+	<level id="3">
 	    <verrous>
-			<verrou>true</verrou>
+			<verrou>false</verrou>
 			<verrou>false</verrou>
 			<verrou>false</verrou>
 		</verrous>
