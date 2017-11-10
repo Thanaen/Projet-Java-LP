@@ -147,7 +147,7 @@ public class NiveauHard extends JFrame{
 			verrousOuvertOuFerme();
 			setImageVerrous();
 			
-			if(verrou1.getEtat()==true && verrou2.getEtat()==true && verrou3.getEtat()==true)
+			if(verrou1.getEtat()==true && verrou2.getEtat()==true && verrou3.getEtat()==true && verrou4.getEtat()==true)
 			{
 				//setImageFond(new ImageIcon("Grand_coffre.gif"));
 				//attendreOuverture();
