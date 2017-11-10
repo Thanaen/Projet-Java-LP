@@ -38,6 +38,8 @@ public class fenetreTest2 extends JFrame{
 	public fenetreTest2(String nomFenetre, int numero)
 	{
 		super(nomFenetre);
+		setSize(400,400);
+		setLocationRelativeTo(null);//Permet de centrer la fenêtre dans l'écran de l'utilisateur
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//récupération des données du niveau
