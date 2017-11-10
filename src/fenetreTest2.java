@@ -2,8 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Vector;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class fenetreTest2 extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4659844689409984516L;
 	private JButton commencer;
 	private JLabel imgFond;
 	private JButton bouton1;
