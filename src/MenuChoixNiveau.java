@@ -31,6 +31,8 @@ public class MenuChoixNiveau extends JFrame {
 		btnRetour.setToolTipText("Retour au menu pr\u00E9c\u00E9dent");
 		btnRetour.addActionListener(new actionRetour());
 		getContentPane().add(btnRetour);
+		
+		setVisible(true);
 	}
 
 	private class actionNiveau1 implements ActionListener {
