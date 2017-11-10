@@ -12,6 +12,10 @@ public class MenuChoixNiveau extends JFrame {
 	private static final long serialVersionUID = -1370735717685911963L;
 
 	public MenuChoixNiveau() {
+		// Paramètres de la fenêtre
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(400,400);
+		setLocationRelativeTo(null);//Permet de centrer la fenêtre dans l'écran de l'utilisateur
 		setTitle("Choix des niveaux");
 		getContentPane().setLayout(new GridLayout(0, 1, 0, 0));
 		
