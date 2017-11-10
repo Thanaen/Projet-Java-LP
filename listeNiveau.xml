@@ -41,4 +41,25 @@
 			</bouton>
 		</boutons>
 	</level>
+	
+	<level id="2">
+	    <verrous>
+			<verrou>true</verrou>
+			<verrou>false</verrou>
+			<verrou>false</verrou>
+		</verrous>
+		<boutons>
+		    <bouton>
+				<verrou1>0</verrou1>
+			</bouton>
+			<bouton>
+				<verrou2>0</verrou2>
+				<verrou2>1</verrou2>
+			</bouton>
+			<bouton>
+				<verrou3>0</verrou3>
+				<verrou3>2</verrou3>
+			</bouton>
+		</boutons>
+	</level>
 </levels>
