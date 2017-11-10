@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
@@ -13,7 +15,8 @@ public class fenetreTest2 extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 4659844689409984516L;
-	private JButton commencer;
+	//private JButton commencer;
+	private JButton retourMenu;
 	private JLabel imgFond;
 	private JButton bouton1;
 	private JButton bouton2;
@@ -84,6 +87,11 @@ public class fenetreTest2 extends JFrame{
 		//commencer = new JButton("Commencer");
 		//barreBas.add(commencer);
 		
+		retourMenu = new JButton("Menu");
+		retourMenu.addActionListener(new actionRetour());
+		barreBas.add(retourMenu);
+		
+		
 		bouton1 = new JButton("bouton1");
 		bouton1.addMouseListener(new ClicDeSouris());
 		barreBas.add(bouton1);
@@ -116,6 +124,13 @@ public class fenetreTest2 extends JFrame{
 				//attendreOuverture();
 				setImageFond(new ImageIcon("coffre_ouvert2.png.png"));
 			}
+		}
+	}
+	
+	private class actionRetour implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			new Interface();
+			dispose();
 		}
 	}
 	
