@@ -1,7 +1,8 @@
 
 public class Verrou {
     private boolean etat; // True = ouvert False = ferm�
-    private boolean etatInitial;
+    @SuppressWarnings("unused")
+	private boolean etatInitial;
 
     public Verrou(boolean etatInitial) {
         this.etatInitial = etatInitial;
