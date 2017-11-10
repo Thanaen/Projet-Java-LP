@@ -53,7 +53,7 @@ public class Interface extends JFrame {
 	// Lance l'interface dédiée au jeu, et ferme la fenêtre actuelle
 	private class actionJouer implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			
+			new MenuChoixNiveau();
 			dispose();
 		}
 	}
