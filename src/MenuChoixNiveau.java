@@ -34,6 +34,11 @@ public class MenuChoixNiveau extends JFrame {
 		JButton btnNiveau3 = new JButton("Niveau 3");
 		btnNiveau3.addActionListener(new actionNiveau3());
 		getContentPane().add(btnNiveau3);
+		
+		JButton btnNiveau4 = new JButton("Niveau Hard");
+		btnNiveau4.addActionListener(new actionNiveau4());
+		getContentPane().add(btnNiveau4);
+		
 		getContentPane().add(btnRetour);
 		
 		setVisible(true);
@@ -54,6 +59,13 @@ public class MenuChoixNiveau extends JFrame {
 	}
 	
 	private class actionNiveau3 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			new fenetreTest2("Niveau 3",3);
+			dispose();
+		}
+	}
+	
+	private class actionNiveau4 implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			new NiveauHard("Niveau Hard");
 			dispose();
