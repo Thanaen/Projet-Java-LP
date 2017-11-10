@@ -81,8 +81,8 @@ public class fenetreTest2 extends JFrame{
 		getContentPane().add(barreBas, BorderLayout.SOUTH);
 		barreBas.setLayout(new FlowLayout(FlowLayout.CENTER, 40, 5));
 		
-		commencer = new JButton("Commencer");
-		barreBas.add(commencer);
+		//commencer = new JButton("Commencer");
+		//barreBas.add(commencer);
 		
 		bouton1 = new JButton("bouton1");
 		bouton1.addMouseListener(new ClicDeSouris());
