@@ -30,6 +30,10 @@ public class MenuChoixNiveau extends JFrame {
 		JButton btnRetour = new JButton("<---------------");
 		btnRetour.setToolTipText("Retour au menu pr\u00E9c\u00E9dent");
 		btnRetour.addActionListener(new actionRetour());
+		
+		JButton btnNiveau3 = new JButton("Niveau 3");
+		btnNiveau3.addActionListener(new actionNiveau3());
+		getContentPane().add(btnNiveau3);
 		getContentPane().add(btnRetour);
 		
 		setVisible(true);
@@ -45,6 +49,13 @@ public class MenuChoixNiveau extends JFrame {
 	private class actionNiveau2 implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			new fenetreTest2("Niveau 2",2);
+			dispose();
+		}
+	}
+	
+	private class actionNiveau3 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			new fenetreTest2("Niveau 3",3);
 			dispose();
 		}
 	}
