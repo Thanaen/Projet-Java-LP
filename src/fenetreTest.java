@@ -75,7 +75,7 @@ public class fenetreTest extends JFrame{
 		barreVerrous.add(imgVerrou3);
 		
 		// Image de fond du jeu
-		ImageIcon monImg = new ImageIcon("coffre_ferme2.png.png");
+		ImageIcon monImg = new ImageIcon("res/coffre_ferme2.png.png");
 		imgFond = new JLabel(monImg);
 		getContentPane().add(imgFond, BorderLayout.CENTER);
 		
@@ -117,7 +117,7 @@ public class fenetreTest extends JFrame{
 			{
 				//setImageFond(new ImageIcon("Grand_coffre.gif"));
 
-				setImageFond(new ImageIcon("coffre_ouvert2.png.png"));
+				setImageFond(new ImageIcon("res/coffre_ouvert2.png.png"));
 			}
 		}
 	}
@@ -143,29 +143,29 @@ public class fenetreTest extends JFrame{
 	{
 		if(verrou1.getEtat()==true)
 		{
-			imgVerrou1II = new ImageIcon("cadenas_ouvert2.png");
+			imgVerrou1II = new ImageIcon("res/cadenas_ouvert2.png");
 		}
 		else
 		{
-			imgVerrou1II = new ImageIcon("cadenas_ferme2.png");
+			imgVerrou1II = new ImageIcon("res/cadenas_ferme2.png");
 		}
 		
 		if(verrou2.getEtat()==true)
 		{
-			imgVerrou2II = new ImageIcon("cadenas_ouvert2.png");
+			imgVerrou2II = new ImageIcon("res/cadenas_ouvert2.png");
 		}
 		else
 		{
-			imgVerrou2II = new ImageIcon("cadenas_ferme2.png");
+			imgVerrou2II = new ImageIcon("res/cadenas_ferme2.png");
 		}
 		
 		if(verrou3.getEtat()==true)
 		{
-			imgVerrou3II = new ImageIcon("cadenas_ouvert2.png");
+			imgVerrou3II = new ImageIcon("res/cadenas_ouvert2.png");
 		}
 		else
 		{
-			imgVerrou3II = new ImageIcon("cadenas_ferme2.png");
+			imgVerrou3II = new ImageIcon("res/cadenas_ferme2.png");
 		}
 	}
 }
