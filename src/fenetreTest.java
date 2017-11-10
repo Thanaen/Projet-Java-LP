@@ -75,7 +75,7 @@ public class fenetreTest extends JFrame{
 		barreVerrous.add(imgVerrou3);
 		
 		// Image de fond du jeu
-		ImageIcon monImg = new ImageIcon("coffre_ferme.png");
+		ImageIcon monImg = new ImageIcon("coffre_ferme2.png");
 		imgFond = new JLabel(monImg);
 		getContentPane().add(imgFond, BorderLayout.CENTER);
 		
@@ -115,9 +115,9 @@ public class fenetreTest extends JFrame{
 			
 			if(verrou1.getEtat()==true && verrou2.getEtat()==true && verrou3.getEtat()==true)
 			{
-				setImageFond(new ImageIcon("Grand_coffre.gif"));
+				//setImageFond(new ImageIcon("Grand_coffre.gif"));
 
-				setImageFond(new ImageIcon("coffre_ouvert.png"));
+				setImageFond(new ImageIcon("coffre_ouvert2.png"));
 			}
 		}
 	}
